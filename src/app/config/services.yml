@@ -20,27 +20,33 @@ services:
 
     bmv.vehicle:
         class: Framework\Vehicle\Vehicle
+        lazy:  true
         arguments: ["%bmv.name%", "@command.factory"]
         calls:
             - [addCommands, ['%bmv.commands%']]
 
     airplane.vehicle:
         class: Framework\Vehicle\Vehicle
+        lazy:  true
         arguments: ["%airplane.name%", "@command.factory"]
         calls:
             - [addCommands, ['%airplane.commands%']]
 
 
     start.command:
+        lazy:  true
         class: Ecomitize\Command\StartCommand
 
     musicOn.command:
+        lazy:  true
         class: Ecomitize\Command\MusicOnCommand
 
     takeOff.command:
+        lazy:  true
         class: Ecomitize\Command\TakeOffCommand
 
     fly.command:
+        lazy:  true
         class: Ecomitize\Command\FlyCommand
 
 

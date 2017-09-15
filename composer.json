@@ -8,16 +8,27 @@
     }
   ],
   "require": {
-    "php": ">=7.0",
+    "php": "~7.0",
     "symfony/dependency-injection": "~3.0",
     "symfony/config": "~3.0",
     "symfony/yaml": "~3.0",
-    "doctrine/common": "~2.0"
+    "doctrine/common": "~2.0",
+    "gubarev/vehicle_command_mapper": "~1.0"
   },
   "autoload": {
     "psr-4": {
-      "Ecomitize\\": "ecomitize/src/",
-      "Framework\\": "framework/src/"
+      "Ecomitize\\": "src/"
     }
-  }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "repositories": [
+    {
+      "url": "https://github.com/alex311982/vehicle_command_mapper.git",
+      "type": "git"
+    }
+  ]
 }
