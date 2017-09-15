@@ -1,0 +1,47 @@
+parameters:
+    garage.vehicles:
+        - bmv
+        - airplane
+
+    bmv.name: bmv
+    bmv.commands:
+        - start
+        - musicOn
+
+    airplane.name: airplane
+    airplane.commands:
+        - takeOff
+        - fly
+
+services:
+    garage.manager:
+        class: Ecomitize\Garage\VehicleManager
+        arguments: ['@vehicle.factory', '%garage.vehicles%']
+
+    bmv.vehicle:
+        class: Framework\Vehicle\Vehicle
+        arguments: ["%bmv.name%", "@command.factory"]
+        calls:
+            - [addCommands, ['%bmv.commands%']]
+
+    airplane.vehicle:
+        class: Framework\Vehicle\Vehicle
+        arguments: ["%airplane.name%", "@command.factory"]
+        calls:
+            - [addCommands, ['%airplane.commands%']]
+
+
+    start.command:
+        class: Ecomitize\Command\StartCommand
+
+    musicOn.command:
+        class: Ecomitize\Command\MusicOnCommand
+
+    takeOff.command:
+        class: Ecomitize\Command\TakeOffCommand
+
+    fly.command:
+        class: Ecomitize\Command\FlyCommand
+
+
+
