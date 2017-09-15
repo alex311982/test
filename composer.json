@@ -16,8 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Ecomitize\\": "ecomitize/src/",
-      "Framework\\": "framework/src/"
+      "Ecomitize\\": "src/"
     }
   }
 }
