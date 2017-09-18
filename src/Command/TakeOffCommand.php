@@ -4,7 +4,7 @@ namespace Ecomitize\Command;
 
 use Framework\Command\AbstractCommand;
 
-class MusicOnCommand extends AbstractCommand
+class TakeOffCommand extends AbstractCommand
 {
     /**
      * This method will be invoked after Actual Command's execution
@@ -14,9 +14,11 @@ class MusicOnCommand extends AbstractCommand
         echo PHP_EOL ;
     }
 
-    protected function processCommand()
+    protected function processCommand(): bool
     {
-        echo 'MUSIC ON';
+        echo 'TAKE OFF';
+
+        return true;
     }
 
 }

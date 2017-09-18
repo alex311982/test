@@ -4,7 +4,7 @@ namespace Ecomitize\Command;
 
 use Framework\Command\AbstractCommand;
 
-class StartCommand extends AbstractCommand
+class FlyCommand extends AbstractCommand
 {
     /**
      * This method will be invoked after Actual Command's execution
@@ -14,9 +14,11 @@ class StartCommand extends AbstractCommand
         echo PHP_EOL ;
     }
 
-    protected function processCommand()
+    protected function processCommand(): bool
     {
-        echo 'START';
+        echo 'FLY';
+
+        return true;
     }
 
 }
