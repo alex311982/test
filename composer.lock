@@ -411,6 +411,7 @@
         },
         {
             "name": "gubarev/vehicle_command_mapper",
+<<<<<<< HEAD
             "version": "v1.0.2",
             "source": {
                 "type": "git",
@@ -420,13 +421,27 @@
             "require": {
                 "doctrine/common": "~2.0",
                 "php": "~7.0",
+=======
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alex311982/vehicle_command_mapper.git",
+                "reference": "c18cc047e3e72d41db0cbb1a4ea681cf6c4835ff"
+            },
+            "require": {
+                "doctrine/common": "~2.0",
+                "php": ">=7.0",
+>>>>>>> 5773222d1cd1f3ee1c95bcf6f8f4b8f0588b264e
                 "symfony/config": "~3.0",
                 "symfony/dependency-injection": "~3.0",
                 "symfony/yaml": "~3.0"
             },
+<<<<<<< HEAD
             "require-dev": {
                 "phpunit/phpunit": "^6.3"
             },
+=======
+>>>>>>> 5773222d1cd1f3ee1c95bcf6f8f4b8f0588b264e
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -445,7 +460,11 @@
                 }
             ],
             "description": "Vehicles and commands componder",
+<<<<<<< HEAD
             "time": "2017-09-19T14:59:40+00:00"
+=======
+            "time": "2017-09-18T11:00:08+00:00"
+>>>>>>> 5773222d1cd1f3ee1c95bcf6f8f4b8f0588b264e
         },
         {
             "name": "psr/container",
@@ -733,6 +752,7 @@
             "time": "2017-07-29T21:54:42+00:00"
         }
     ],
+<<<<<<< HEAD
     "packages-dev": [
         {
             "name": "doctrine/instantiator",
@@ -2184,6 +2204,9 @@
             "time": "2016-11-23T20:04:58+00:00"
         }
     ],
+=======
+    "packages-dev": [],
+>>>>>>> 5773222d1cd1f3ee1c95bcf6f8f4b8f0588b264e
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
