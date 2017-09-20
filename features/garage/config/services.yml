@@ -24,22 +24,18 @@ services:
     start.command:
         lazy:  true
         class: Ecomitize\Command\StartCommand
-        arguments: ["%command.post_execution_delimiter%"]
 
     musicOn.command:
         lazy:  true
         class: Ecomitize\Command\MusicOnCommand
-        arguments: ["%command.post_execution_delimiter%"]
 
     takeOff.command:
         lazy:  true
         class: Ecomitize\Command\TakeOffCommand
-        arguments: ["%command.post_execution_delimiter%"]
 
     fly.command:
         lazy:  true
         class: Ecomitize\Command\FlyCommand
-        arguments: ["%command.post_execution_delimiter%"]
 
 
 

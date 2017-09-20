@@ -19,6 +19,11 @@ try {
     /** @var \Doctrine\Common\Collections\Collection $vehicles */
     $vehicles = $container->get('garage.manager')->createGarage();
 
+    if ($vehicles->isEmpty()) {
+        echo $container->getParameter('garage.messageEmpty');
+        echo PHP_EOL;
+    }
+
     /** @var \Framework\Vehicle\VehicleInterface $vehicle */
     foreach ($vehicles as $vehicle) {
         echo $vehicle->getName();

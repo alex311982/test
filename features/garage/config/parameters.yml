@@ -13,6 +13,4 @@ parameters:
         - takeOff
         - fly
 
-    garage.messageEmpty: Garage is empty
-
-    command.post_execution_delimiter: \r\n
+    garage.messageEmpty: Garage is empty for now
