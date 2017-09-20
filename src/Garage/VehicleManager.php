@@ -2,9 +2,7 @@
 
 namespace Ecomitize\Garage;
 
-use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\Common\Collections\Collection;
-use Framework\Exception\InstanceIsNotSetException;
 use Framework\Factory\VehicleFactoryInterface;
 
 /**
@@ -28,7 +26,7 @@ class VehicleManager
      * @param VehicleFactoryInterface $factory
      * @param array $vehicles
      */
-    public function __construct(VehicleFactoryInterface $factory, array $vehicles)
+    public function __construct(VehicleFactoryInterface $factory, ?array $vehicles)
     {
         $this->factory = $factory;
         $this->vehicles = $vehicles;
@@ -39,20 +37,7 @@ class VehicleManager
      */
     public function createGarage(): Collection
     {
-        return $this->getFactory()->processVehicles($this->getVehicles());
-    }
-
-    /**
-     * @return VehicleFactoryInterface
-     * @throws InstanceIsNotSetException
-     */
-    protected function getFactory(): VehicleFactoryInterface
-    {
-        if (!$this->factory instanceof VehicleFactoryInterface) {
-            throw new InstanceIsNotSetException('Vehicle`s factory is no set for class ' . __CLASS__);
-        }
-
-        return $this->factory;
+        return $this->factory->processVehicles($this->getVehicles());
     }
 
     /**

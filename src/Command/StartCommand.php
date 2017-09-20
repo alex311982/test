@@ -4,6 +4,10 @@ namespace Ecomitize\Command;
 
 use Framework\Command\AbstractCommand;
 
+/**
+ * Class StartCommand
+ * @package Ecomitize\Command
+ */
 class StartCommand extends AbstractCommand
 {
     /**
@@ -14,6 +18,9 @@ class StartCommand extends AbstractCommand
         echo PHP_EOL ;
     }
 
+    /**
+     * @return bool
+     */
     protected function processCommand(): bool
     {
         echo 'START';

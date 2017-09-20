@@ -25,35 +25,33 @@ class VehicleManagerTest extends TestCase
     {
        $this->factory = $this->createMock(VehicleFactoryInterface::class);
 
-       $this->factory->expects($this->once())
-            ->method('processVehicles')
-            ->with([])
-            ->will($this->returnValue(new ArrayCollection([])));
+        $map = [
+            [[], new ArrayCollection],
+            [['vehicle_1', 'vehicle_2'], new ArrayCollection(['vehicle_1_resolved', 'vehicle_2_resolved'])],
+        ];
 
-        $this->factory->expects($this->once())
+        $this->factory->expects(($this->once()))
             ->method('processVehicles')
-            ->with(['vehicle_1', 'vehicle_2'])
-            ->will($this->returnValue(new ArrayCollection(['vehicle_1_resolved', 'vehicle_2_resolved'])));
+            ->will($this->returnValueMap($map));
     }
 
     /**
      * @dataProvider dataProviderVehicles
      */
-    public function testCreateGarage(array $vehicles)
+    public function testCreateGarage(?array $vehicles)
     {
         $manager = new VehicleManager($this->factory, $vehicles);
 
         $vehicles = $manager->createGarage();
-        var_dump($vehicles);exit;
-        $this->assertInstanceOf(Collection::class, $vehicles);
 
+        $this->assertInstanceOf(Collection::class, $vehicles);
         $this->assertCount(count($vehicles), $vehicles);
     }
 
     public function dataProviderVehicles()
     {
         return [
-            [[]],
+            [null],
             [['vehicle_1', 'vehicle_2']],
         ];
     }

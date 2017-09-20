@@ -4,6 +4,10 @@ namespace Ecomitize\Command;
 
 use Framework\Command\AbstractCommand;
 
+/**
+ * Class MusicOnCommand
+ * @package Ecomitize\Command
+ */
 class MusicOnCommand extends AbstractCommand
 {
     /**
@@ -14,6 +18,9 @@ class MusicOnCommand extends AbstractCommand
         echo PHP_EOL ;
     }
 
+    /**
+     * @return bool
+     */
     protected function processCommand(): bool
     {
         echo 'MUSIC ON';

@@ -4,6 +4,10 @@ namespace Ecomitize\Command;
 
 use Framework\Command\AbstractCommand;
 
+/**
+ * Class FlyCommand
+ * @package Ecomitize\Command
+ */
 class FlyCommand extends AbstractCommand
 {
     /**
@@ -14,6 +18,9 @@ class FlyCommand extends AbstractCommand
         echo PHP_EOL ;
     }
 
+    /**
+     * @return bool
+     */
     protected function processCommand(): bool
     {
         echo 'FLY';

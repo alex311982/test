@@ -1,0 +1,14 @@
+parameters:
+    garage.vehicles:
+        - bmv
+        - airplane
+
+    bmv.name: bmv-super-car
+    bmv.commands:
+        - start
+        - musicOn
+
+    airplane.name: airplane-best-for-fly
+    airplane.commands:
+        - takeOff
+        - fly

@@ -4,6 +4,10 @@ namespace Ecomitize\Command;
 
 use Framework\Command\AbstractCommand;
 
+/**
+ * Class TakeOffCommand
+ * @package Ecomitize\Command
+ */
 class TakeOffCommand extends AbstractCommand
 {
     /**
@@ -14,6 +18,9 @@ class TakeOffCommand extends AbstractCommand
         echo PHP_EOL ;
     }
 
+    /**
+     * @return bool
+     */
     protected function processCommand(): bool
     {
         echo 'TAKE OFF';

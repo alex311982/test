@@ -1,17 +1,5 @@
-parameters:
-    garage.vehicles:
-        - bmv
-        - airplane
-
-    bmv.name: bmv
-    bmv.commands:
-        - start
-        - musicOn
-
-    airplane.name: airplane
-    airplane.commands:
-        - takeOff
-        - fly
+imports:
+    - { resource: parameters.yml }
 
 services:
     garage.manager:
