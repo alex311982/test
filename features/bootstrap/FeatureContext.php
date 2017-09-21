@@ -9,6 +9,8 @@ use Framework\Application;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
+define('pathConfig', '/../garage/config/');
+
 /**
  * Defines application features from the specific context.
  */
@@ -46,7 +48,7 @@ class FeatureContext implements Context
     public function loadConfig($path)
     {
         $loader = new YamlFileLoader($this->container, new FileLocator(__DIR__ . $path));
-        $loader->load('services.yml');
+        $loader->load('services_test.yml');
     }
 
     /**
@@ -65,17 +67,21 @@ class FeatureContext implements Context
      */
     public function moveVehicles($result)
     {
+        $str = '';
+
         try {
             if ($this->vehicles->isEmpty()) {
-                echo $this->container->getParameter('garage.messageEmpty');
+                assert($result, $this->container->getParameter('garage.messageEmpty'));
             }
 
             /** @var \Framework\Vehicle\VehicleInterface $vehicle */
             foreach ($this->vehicles as $vehicle) {
-                echo $vehicle->getName();
-                echo ":";
-                $vehicle->executeCommands();
+                $str .= $vehicle->getName();
+                $str .= PHP_EOL;
+                $str .= $vehicle->executeCommands();
             }
+
+            assert($result, $str);
         } catch (\Exception $e) {
             echo $e->getMessage();
         }

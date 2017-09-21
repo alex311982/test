@@ -1,5 +1,5 @@
 imports:
-    - { resource: parameters.yml }
+    - { resource: parameters_test_empty.yml }
 
 services:
     garage.manager:
@@ -36,3 +36,6 @@ services:
     fly.command:
         lazy:  true
         class: Ecomitize\Command\FlyCommand
+
+
+

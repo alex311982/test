@@ -1,7 +1,5 @@
 parameters:
     garage.vehicles:
-        - bmv
-        - airplane
 
     bmv.name: bmv-super-car
     bmv.commands:
@@ -13,4 +11,4 @@ parameters:
         - takeOff
         - fly
 
-    garage.messageEmpty: Garage is empty for now
+    garage.messageEmpty: Garage for testing is empty now

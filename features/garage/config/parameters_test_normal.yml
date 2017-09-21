@@ -13,4 +13,4 @@ parameters:
         - takeOff
         - fly
 
-    garage.messageEmpty: Garage is empty
+    garage.messageEmpty: Garage for testing is empty now
