@@ -1,6 +1,7 @@
 parameters:
     garage.vehicles:
-        - not-exist-vehicle
+        - bmv
+        - airplane
 
     bmv.name: bmv-super-car
     bmv.commands:

@@ -1,5 +1,5 @@
 imports:
-    - { resource: parameters_test_not_exist_vehicle.yml }
+    - { resource: parameters_test_not_exist_command.yml }
 
 services:
     garage.manager:
