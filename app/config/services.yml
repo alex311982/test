@@ -11,14 +11,14 @@ services:
         lazy:  true
         arguments: ["%bmv.name%", "@command.factory"]
         calls:
-            - [addCommands, ['%bmv.commands%']]
+            - [addCommands, ["%bmv.commands%"]]
 
     airplane.vehicle:
         class: Framework\Vehicle\Vehicle
         lazy:  true
         arguments: ["%airplane.name%", "@command.factory"]
         calls:
-            - [addCommands, ['%airplane.commands%']]
+            - [addCommands, ["%airplane.commands%"]]
 
 
     start.command:
@@ -36,3 +36,28 @@ services:
     fly.command:
         lazy:  true
         class: Ecomitize\Command\FlyCommand
+
+
+#    gelf.transport:
+#        class: Monolog\Handler\StreamHandler
+#        arguments: ["%graylog.file_path%"]
+#
+#    gelf.publisher:
+#        class: Gelf\Publisher
+#        arguments: ["@gelf.transport"]
+#
+#    monolog.gelf_handler:
+#        class: Monolog\Handler\GelfHandler
+#        arguments: ["@gelf.publisher", "%monolog.handler.debug_level%"]
+
+    monolog.handler:
+        class: Monolog\Handler\StreamHandler
+        arguments: ["%graylog.file_path%"]
+        public: false
+
+    monolog.logger:
+        class: Monolog\Logger
+        arguments: ["%monolog.logger.name%"]
+        calls:
+            - [pushHandler, ["@monolog.handler"]]
+

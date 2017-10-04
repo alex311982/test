@@ -1,6 +1,7 @@
 <?php
 
 use Framework\Application;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
@@ -18,6 +19,11 @@ try {
 
     /** @var \Doctrine\Common\Collections\Collection $vehicles */
     $vehicles = $container->get('garage.manager')->createGarage();
+
+    /** @var LoggerInterface $logger */
+    $logger = $container->get('monolog.logger');
+
+    $logger->debug('vehicles_in_garage', ['vehicles' => $vehicles]);
 
     if ($vehicles->isEmpty()) {
         echo $container->getParameter('garage.messageEmpty');

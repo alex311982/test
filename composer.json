@@ -13,7 +13,10 @@
     "symfony/config": "~3.0",
     "symfony/yaml": "~3.0",
     "doctrine/common": "~2.0",
-    "gubarev/vehicle_command_mapper": "~1.0"
+    "gubarev/vehicle_command_mapper": "~1.0",
+    "monolog/monolog": "~1.0",
+    "graylog2/gelf-php": "^1.5"
+
   },
   "require-dev": {
     "phpunit/phpunit": "^6.3",

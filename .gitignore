@@ -2,3 +2,4 @@
 .idea/
 /bin/
 /coverage/
+/data/logs/test.log
